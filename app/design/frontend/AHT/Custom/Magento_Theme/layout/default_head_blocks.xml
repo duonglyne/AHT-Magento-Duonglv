@@ -1,6 +1,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <!--Font-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" src="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" src_type="url" />
+        <link src="https://www.fontify.me/wf/db5f6103ec071f63969aec4db3f06816" rel="stylesheet" type="text/css" />
+        <css src="css/custom.css" media="all" />
     </head>
 </page>

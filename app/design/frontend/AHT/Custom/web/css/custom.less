@@ -1,0 +1,49 @@
+//Mixin
+@black-color: #000;
+@white-color: #fff;
+@text-color: #333;
+@title-color: #282D2E;
+@link-color: #666;
+@price-color: #555;
+@line-color: #999;
+@button-color: #B1526E;
+
+@font-sfns: font37300;
+
+// G1SJ-464 - Header
+.page-wrapper{
+    .page-header{
+        max-width: 1600px;
+        padding: 13px 24px;
+        .panel.wrapper{
+            display: none;
+        }
+
+        .header{
+            .logo{
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+            .minicart-wrapper{
+                .showcart{
+                    background-image: url("../images/shopping-bag@2x.png");
+                    background-repeat: no-repeat;
+                    width: 30px;
+                    height: 30px;
+                    background-size: 21px;
+                    &::before{
+                        content:'';
+                    }
+                }
+            }
+        }
+    }
+    .nav-sections{
+        .section-item-content{
+            .navigation{
+                text-align: center;
+            }
+        }
+    }
+}
+// G1SJ-464 - Header

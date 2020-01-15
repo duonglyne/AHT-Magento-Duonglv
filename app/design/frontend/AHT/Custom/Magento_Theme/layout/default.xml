@@ -7,5 +7,78 @@
                 <argument name="logo_img_height" xsi:type="number">48</argument>
             </arguments>
         </referenceBlock>
+
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+
+        <!-- <referenceContainer name="header-wrapper">
+            <container name="contain_cart_and_account" label="tag content minicart and my acccount" htmlTag="div" htmlClass="header-box-custom" after="-"/>
+        </referenceContainer> -->
+
+        <!-- <move element="my-account-link" destination="header-wrapper" before="minicart"/> -->
+        <!-- <move element="minicart" destination="contain_cart_and_account" after="-"/> -->
+
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Cms\Block\Block" name="Header-bottom-block" before="main.content">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">Header-bottom-block</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Cms\Block\Block" name="footer-coppyright-block" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-coppyright-block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <!-- custom footer -->
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer-top-custom">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-top-custom</argument>
+                </arguments>
+            </block>
+            <container name="footer_container_custom" label="Footer Container" htmlTag="div" htmlClass="footer_container" after="-"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer_container_custom">
+            <container name="footer_left" label="Footer left" htmlTag="div" htmlClass="footer_left" before="-"/>
+            <container name="footer_right" label="Footer right" htmlTag="div" htmlClass="footer_right" after="-"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer_left">
+            <block class="Magento\Cms\Block\Block" name="footer-logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-logo</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer-information">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-information</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer-about-poni">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-about-poni</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer_right">
+        <block class="Magento\Cms\Block\Block" name="footer-social-link">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-social-link</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <move element="form.subscribe" destination="footer_right" before="footer-social-link"/>
+        <!-- end custom footer -->
+
     </body>
 </page>
