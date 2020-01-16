@@ -4,7 +4,7 @@
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.png</argument>
                 <argument name="logo_img_width" xsi:type="number">168</argument> 
-                <argument name="logo_img_height" xsi:type="number">48</argument>
+                <argument name="logo_img_height" xsi:type="number">50</argument>
             </arguments>
         </referenceBlock>
 
@@ -30,6 +30,18 @@
                 </arguments>
             </block>
 
+            <block class="Magento\Cms\Block\Block" name="big-banner-homepage" after="Header-bottom-block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">big-banner-homepage</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Cms\Block\Block" name="footer-top-custom">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-top-custom</argument>
+                </arguments>
+            </block>
+
             <block class="Magento\Cms\Block\Block" name="footer-coppyright-block" after="-">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer-coppyright-block</argument>
@@ -39,11 +51,6 @@
 
         <!-- custom footer -->
         <referenceContainer name="footer">
-            <block class="Magento\Cms\Block\Block" name="footer-top-custom">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">footer-top-custom</argument>
-                </arguments>
-            </block>
             <container name="footer_container_custom" label="Footer Container" htmlTag="div" htmlClass="footer_container" after="-"/>
         </referenceContainer>
 
