@@ -8,19 +8,49 @@
             </arguments>
         </referenceBlock>
 
-        <referenceBlock name="register-link" remove="true" />
+        <!-- <referenceBlock name="register-link" remove="true" /> -->
         <referenceBlock name="wish-list-link" remove="true" />
         <referenceBlock name="report.bugs" remove="true"/>
-        <referenceBlock name="authorization-link" remove="true" />
+        <!-- <referenceBlock name="authorization-link" remove="true" /> -->
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="copyright" remove="true"/>
-        <referenceBlock name="my-account-link" remove="true"/>
+        <!-- <referenceBlock name="my-account-link" remove="true"/> -->
 
-        <!-- <referenceContainer name="header-wrapper">
-            <container name="contain_cart_and_account" label="tag content minicart and my acccount" htmlTag="div" htmlClass="header-box-custom" after="-"/>
-        </referenceContainer> -->
+        <referenceContainer name="header-wrapper">
+            <container name="list-link" htmlTag="div" htmlClass="list-link">
+            <container name="list-link-item" htmlTag="ul" htmlClass="list-link-item header-hidden">
+                    <block class="Magento\Customer\Block\Account\Link" name="my-account-link-desktop">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link-desktop">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
+                        </arguments>
+                    </block>
+                    <!-- <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header-wl.phtml"></block> -->
+                    <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-desktop"
+                        template="account/link/authorization.phtml"/>
+            </container>
+            </container>
+            <container name="custom-header-left" label="custom header link" htmlTag="div" htmlClass="custom-header-left" before="-">
+                <block class="Magento\Cms\Block\Block" name="header-custom-right" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header-custom-right</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="custom-header-right" label="custom header link right" htmlTag="div" htmlClass="custom-header-right" after="-">
+                <container name="custom-header-links" label="custom link" htmlTag="div" htmlClass="custom-header-link" after="-"/>
+            </container>
+            <container name="custom-header-logo" label="logo Container" htmlTag="div" htmlClass="custom-header-logo" before="custom-header-right"/>
+        </referenceContainer>
 
-        <!-- <move element="my-account-link" destination="header-wrapper" before="minicart"/> -->
+        <move element="minicart" destination="custom-header-links"/>
+        <move element="list-link" destination="custom-header-links"/>
+        <move element="top.search" destination="custom-header-right" before="-"/>
+        <move element="logo" destination="custom-header-logo" before="-"/>
         <!-- <move element="minicart" destination="contain_cart_and_account" after="-"/> -->
 
         <referenceContainer name="page.wrapper">
@@ -78,14 +108,15 @@
         </referenceContainer>
 
         <referenceContainer name="footer_right">
-        <block class="Magento\Cms\Block\Block" name="footer-social-link">
+            <block class="Magento\Cms\Block\Block" name="footer-social-link">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer-social-link</argument>
                 </arguments>
             </block>
+            <!-- add custom js -->
+            <block name="custom-js-page" template="Magento_Theme::custom-js-file.phtml" />
         </referenceContainer>
         <move element="form.subscribe" destination="footer_right" before="footer-social-link"/>
         <!-- end custom footer -->
-
     </body>
 </page>

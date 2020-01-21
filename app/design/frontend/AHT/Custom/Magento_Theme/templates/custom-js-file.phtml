@@ -1,0 +1,40 @@
+<script>
+    (function  () {
+        require(["jquery","owlcarousel"],function($) {
+            $(document).ready(function() {
+                $(".product-items.widget-product-grid").owlCarousel({
+                    navigation : true, // Show next and prev buttons
+                    autoPlay: false, //Set AutoPlay to 3 seconds 
+                    loop: true,
+                    items : 3,
+                    responsive:{
+                        0:{
+				            items:1
+				        },
+                        320:{
+				            items:2
+				        },
+				        480:{
+				            items:2
+				        },
+                        640:{
+				            items:3
+				        },
+				        768:{
+				            items:3
+				        }
+				    }
+                });
+            });
+        });
+    })();
+    </script>
+
+<script type="text/javascript">
+    // This is the javascript codes togger class searchbar
+    require(['jquery'], function($) {
+        $('.list-link').on('click', function() {
+            $( ".list-link-item" ).toggleClass( "header-hidden" )
+        });
+    });
+</script>
