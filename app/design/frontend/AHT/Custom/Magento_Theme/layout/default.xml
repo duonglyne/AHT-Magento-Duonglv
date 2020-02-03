@@ -77,8 +77,16 @@
                     <argument name="block_id" xsi:type="string">footer-coppyright-block</argument>
                 </arguments>
             </block>
-        </referenceContainer>
 
+            <container name="custom-breadcrumbs" label="custom breadcrumbs" htmlTag="div" htmlClass="custom-breadcrumbs" after="Header-bottom-block">
+                <container name="custom-cate-image" label="custom cate image" htmlTag="div" htmlClass="custom-cate-image" after="-">
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="breadcrumbs" destination="custom-breadcrumbs" before="-"/>
+        <move element="page.main.title" destination="custom-cate-image" before="-" />
+        <move element="category.image" destination="custom-cate-image" before="-" />
+        
         <!-- custom footer -->
         <referenceContainer name="footer">
             <container name="footer_container_custom" label="Footer Container" htmlTag="div" htmlClass="footer_container" after="-"/>

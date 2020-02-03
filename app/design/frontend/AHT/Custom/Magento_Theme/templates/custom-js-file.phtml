@@ -38,3 +38,35 @@
         });
     });
 </script>
+
+<script>
+    (function  () {
+        require(["jquery","owlcarousel"],function($) {
+            $(document).ready(function() {
+                $(".block-viewed-products-grid .product-items").owlCarousel({
+                    navigation : true, // Show next and prev buttons
+                    autoPlay: false, //Set AutoPlay to 3 seconds 
+                    loop: true,
+                    items : 3,
+                    responsive:{
+                        0:{
+				            items:1
+				        },
+                        320:{
+				            items:2
+				        },
+				        480:{
+				            items:2
+				        },
+                        640:{
+				            items:3
+				        },
+				        768:{
+				            items:3
+				        }
+				    }
+                });
+            });
+        });
+    })();
+    </script>

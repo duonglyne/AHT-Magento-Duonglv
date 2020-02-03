@@ -1,0 +1,10 @@
+<?php
+    $category = $this->_objectManager->create('Magento\Catalog\Model\Category')->load($item->getId());
+    $_outputhelper    = $this->helper('Magento\Catalog\Helper\Output');
+    $_imgHtml   = '';
+    if ($_imgUrl = $category->getImageUrl()) {
+        $_imgHtml = '<img src="' . $_imgUrl . '" />';
+        $_imgHtml = $_outputhelper->categoryAttribute($category, $_imgHtml, 'image');
+        /* @escapeNotVerified */ echo $_imgHtml;
+    }
+?>

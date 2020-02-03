@@ -1,0 +1,25 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <!-- <referenceBlock name="product_list_toolbar" remove="true" /> -->
+    <!-- <referenceContainer name="columns">
+        <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Magento_Catalog::product/list/toolbar.phtml">
+            <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager" before="-"/>
+        </block>
+    </referenceContainer> -->
+    <!-- <referenceContainer name="page.wrapper">
+        <container name="custom-toolbar" label="custom-toolbar" htmlTag="div" htmlClass="custom-toolbar" after="custom-breadcrumbs">
+            <container name="custom-cate-image" label="custom cate image" htmlTag="div" htmlClass="custom-cate-image" after="-">
+            </container>
+        </container>
+    </referenceContainer> -->
+    <!-- <move element="product_list_toolbar_pager" destination="columns" before="-"/> -->
+
+    <referenceContainer name="content">
+        <container name="custom-sidebar" label="custom-sidebar" htmlTag="div" htmlClass="custom-sidebar" after="product_list_toolbar">
+        </container>
+    </referenceContainer>
+
+    <move element="sidebar.main" destination="custom-sidebar" before="-"/>
+    <move element="recently_viewed" destination="columns" after="-"/>
+    </body>
+</page>
